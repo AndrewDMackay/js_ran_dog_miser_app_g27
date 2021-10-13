@@ -7,7 +7,11 @@ function App() {
     const [dogImgUrl, setDogImgUrl] = useState("");
 
   const fetchDog = function(){
-    console.log("Hello from fetchDog!")
+    // console.log("Hello from fetchDog!")
+    const request = fetch("https://dog.ceo/api/breeds/image/random")
+    .then(response => response.json())
+    .then(data => setDogImgUrl(data.message))
+    // console.log(request);
   }
 
   return (
